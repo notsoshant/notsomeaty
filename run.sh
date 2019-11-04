@@ -1,5 +1,9 @@
 #!/bin/sh
 
-rm -f /run/apache2/apache2.pid
-rm -f /run/apache2/httpd.pid
-httpd -D FOREGROUND
+exec /usr/sbin/httpd -D FOREGROUND
+
+while true
+do
+    tail -f /var/log/apache2/*.log
+    exit 0
+done
