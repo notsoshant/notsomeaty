@@ -1,5 +1,5 @@
 FROM alpine:latest
-LABEL Name=vegefoods Version=0.0.1
+LABEL Name=notsomeaty Version=0.0.1
 RUN apk update && apk add apache2 php7 php7-apache2
 COPY ./httpd.conf /etc/apache2/httpd.conf
 COPY ./src /app
